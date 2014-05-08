@@ -6,7 +6,8 @@ exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 pygments: true
 
 # https://help.github.com/articles/migrating-your-pages-site-from-maruku
-markdown: kramdown
+# markdown: kramdown
+markdown: redcarpet-pygments
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
@@ -14,11 +15,11 @@ markdown: kramdown
 title : My Dissertation
 tagline: 
 author : Tom Cook
- name : Name Lastname
-  email : thomas.cook@colorado.edu
-  github : username
-  twitter : username
-  feedburner : feedname
+name : Name Lastname
+email : thomas.cook@colorado.edu
+github : username
+twitter : username
+feedburner : feedname
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
