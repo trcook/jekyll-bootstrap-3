@@ -11,7 +11,7 @@
     <link href="{{ ASSET_PATH }}/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ ASSET_PATH }}/resources/bootstrap/css/syntax_solarized.css" rel="stylesheet">
     <link href="{{ ASSET_PATH }}/resources/bootstrap/css/my_css.css" rel="stylesheet">
-    
+
     <!--[if lt IE 9]>
       <script src="{{ ASSET_PATH }}/resources/respond/Respond.min.js"></script>
     <![endif]-->
@@ -28,19 +28,15 @@
 
 <!-- del if not working -->
 
-{% if page.title %}
-<div class="container-fluid jumbotron" id="title">
-
-
-<!-- <div class="row"> -->
-
-<!-- <div class="col-sm-12" > -->
-
+{% if page.big_title == true %}
+<div class="container-fluid jumbotron hero" id="title">
+  <row>
    <h1>{{ page.title }} {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
- 
-
-<!-- </div> -->
-<!-- </div> -->
+ </row>
+</div>
+{% else %}
+<div class="container-fluid jumbotron" id="title">
+   <h1>{{ page.title }} {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
 </div>
 {% endif %}
 
@@ -48,6 +44,7 @@
 
     <nav class="navbar  navbar-default " id="main_nav" role="navigation" >
       <div class="container">
+
         <div class="row">      <div class="col-sm-12">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -58,7 +55,7 @@
             </button>
             <a class="navbar-brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
           </div>
-          
+
           <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
               {% assign pages_list = site.pages %}
@@ -74,8 +71,12 @@
 
     <div class="container-fluid">
       {{ content }}
-      <hr>
+    </div>
+    <div class="container-fluid">
       <footer>
+        <div class="col-sm-12">
+        <hr>
+
         <p>
           &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
           <span class="pull-right text-muted">
@@ -86,16 +87,19 @@
         </p>
       </footer>
     </div>
+    </div>
 
     {% include JB/analytics %}
-    <script src="{{ ASSET_PATH }}/resources/jquery/jquery.min.js"></script>
+    <!-- // <script src="{{ ASSET_PATH }}/resources/jquery/jquery.min.js"></script> -->
+    <script src="{{ ASSET_PATH }}/resources/jquery/jquery-1.11.1.min.js"></script>
+
     <script src="{{ ASSET_PATH }}/resources/bootstrap/js/bootstrap.min.js"></script>
     <script>
-//<![CDATA[ 
+//<![CDATA[
 
 $(function() {
     $('nav').height($("nav").height());
-    
+
     $('nav').affix({
         offset: { top: $('nav').offset().top }
     });

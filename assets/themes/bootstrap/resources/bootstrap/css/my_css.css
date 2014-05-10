@@ -12,42 +12,60 @@ footer { padding-left:10px;
         */
 
 
-.jumbotron{        
+.navbar-default .navbar-nav>li>a: hover,.navbar-default .navbar-nav>li>a: focus {
+	color: #333;
+	background-color: #fff;
+	z-index:50000;
+}
+
+.jumbotron{margin-bottom:0px;}
+
+.jumbotron.hero{
 
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;
-    position:relative; }
-
+    position:relative;
+}
 
 
         @media screen and (min-width:1px) {
-            .jumbotron {
+            .jumbotron.hero {
                 padding-top: 20px;
                 padding-bottom: 20px;
                 background-image: linear-gradient(to bottom, #529abb 0, #4186A6 100%);
                     min-height:10%;
-                    height:auto;;
+                    height:auto;
 
             }
             .navbar {margin-bottom:0px;}
+						.navbar-default .navbar-nav>li>a{ z-index:100000;
+																					background-color:#F8F8F8;	}
+						.navbar-default .navbar-nav>li>a:hover{background-color:#333;color:#f3f3f3;}
+						.navbar-default .navbar-nav>li>a:focus{background-color:#333; color:#f3f3f3;}
+						.navbar-default .navbar-nav>li>a:active{background-color:#333; color:#f3f3f3;;}
 
         }
 
         @media screen and (min-width:768px) {
-            .jumbotron {
+            .jumbotron.hero {
         /*padding-top: 200px;
         padding-bottom: 20px;*/
             min-height:100%;
 
     height:100%;
-        background-image: linear-gradient(to-top, #74aec8 0, #529abb 100%);;
+        background-image: linear-gradient(to-top, #74aec8 0, #529abb 100%);
     }
     .navbar {margin-bottom:0px;}
+		.navbar-default .navbar-nav>li>a{z-index:100000;
+																	background-color:#e7e7e7;	}
+
+
+		.navbar-default .navbar-nav>li>a{background-color:inherit; color:auto;;}
 
 }
-    
-    .jumbotron h1{position:absolute;
+
+    .jumbotron.hero h1{position:absolute;
         bottom:0;}
 
     html,body {min-height: 100%;
@@ -63,6 +81,6 @@ nav.affix {
 
 }
 
-
-  
-   
+container-fluid:{
+  padding-left: 15px;
+     padding-right: 15px;}
