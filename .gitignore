@@ -9,3 +9,7 @@ Thumbs.db
 .rbenv-version
 .rvmrc
 *.md
+
+
+*.sublime-workspace
+*.sublime-project
