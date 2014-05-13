@@ -7,7 +7,7 @@
     {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
     <meta name="author" content="{{ site.author.name }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <!-- <link href="{{ ASSET_PATH }}/resources/bootstrap/css/jquery.tocify.css" rel="stylesheet"> -->
     <link href="{{ ASSET_PATH }}/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ ASSET_PATH }}/resources/bootstrap/css/syntax_solarized.css" rel="stylesheet">
     <link href="{{ ASSET_PATH }}/resources/bootstrap/css/my_css.css" rel="stylesheet">
@@ -94,17 +94,19 @@
     <script src="{{ ASSET_PATH }}/resources/jquery/jquery-1.11.1.min.js"></script>
 
     <script src="{{ ASSET_PATH }}/resources/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{ ASSET_PATH }}/resources/bootstrap/js/jquery-ui-1.10.4.custom.min.js"></script>
+   
     <script>
 //<![CDATA[
 
 $(function() {
-    $('nav').height($("nav").height());
+    $('nav.navbar').height($("nav.navbar").height());
 
-    $('nav').affix({
-        offset: { top: $('nav').offset().top }
+    $('nav.navbar').affix({
+        offset: { top: $('nav.navbar').offset().top }
     });
-    $('nav').affix({
-        offset: { top: $('nav').offset().top }
+    $('nav.navbar').affix({
+        offset: { top: $('nav.navbar').offset().top }
     })
 });
 //]]>
@@ -114,6 +116,24 @@ $(function() {
   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
+{% if page.layout contains 'pagetoc' %}
+ <script src="{{ ASSET_PATH }}/resources/bootstrap/js/jquery.tocify.js"></script>
+<script type="text/javascript">
+//Executes your code when the DOM is ready.  Acts the same as $(document).ready().
+// This script corresponds to the tocify javascript
+              //Executes your code when the DOM is ready.  Acts the same as $(document).ready().
+
+              $(function() {
+                  // Calls the selectBoxIt method on your HTML select box and updates the showEffect option
+                  var toc = $("#toc").tocify().data("toc-tocify");
+
+                  // Sets the showEffect, scrollTo, and smoothScroll options
+                  toc.setOptions({ showAndHide: false,Effect: "fadeIn" });
+
+              });
+              
+</script>
+{% endif %}
 
   </body>
 </html>

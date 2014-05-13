@@ -43,7 +43,7 @@ footer { padding-left:10px;
 																					background-color:#F8F8F8;	}
 						.navbar-default .navbar-nav>li>a:hover{background-color:#333;color:#f3f3f3;}
 						.navbar-default .navbar-nav>li>a:focus{background-color:#333; color:#f3f3f3;}
-						.navbar-default .navbar-nav>li>a:active{background-color:#333; color:#f3f3f3;;}
+						.navbar-default .navbar-nav>li>a:active{background-color:#333; color:#f3f3f3;}
 
         }
 
@@ -61,7 +61,7 @@ footer { padding-left:10px;
 																	background-color:#e7e7e7;	}
 
 
-		.navbar-default .navbar-nav>li>a{background-color:inherit; color:auto;;}
+		.navbar-default .navbar-nav>li>a{background-color:inherit; color:auto;}
 
 }
 
@@ -84,3 +84,11 @@ nav.affix {
 container-fluid:{
   padding-left: 15px;
      padding-right: 15px;}
+
+#toc.nav li {margin-left:100 px;}
+
+.nav-list  li, .nav-list .nav-header {
+    padding-right:10px;
+}
+
+.tocify.nav ul {margin-left:10px;}
