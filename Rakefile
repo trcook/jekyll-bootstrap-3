@@ -57,6 +57,7 @@ task :post do
   if File.exist?(filename)
     abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
   end
+
   
   puts "Creating new post: #{filename}"
   open(filename, 'w') do |post|
@@ -304,6 +305,7 @@ def get_stdin(message)
   print message
   STDIN.gets.chomp
 end
+
 
 #Load custom rake scripts
 Dir['_rake/*.rake'].each { |r| load r }

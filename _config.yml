@@ -13,7 +13,7 @@ redcarpet:
 
 # my customizations:
 
-category-list: [scripts, analysis ,datasets,construction]
+category-list: [scripts, analysis ,datasets,construction,notes]
 
 
 #: end my customizations
