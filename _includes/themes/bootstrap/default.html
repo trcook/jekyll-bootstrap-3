@@ -8,10 +8,12 @@
     <meta name="author" content="{{ site.author.name }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link href="{{ ASSET_PATH }}/resources/bootstrap/css/jquery.tocify.css" rel="stylesheet"> -->
+    <link href="{{ ASSET_PATH }}/resources/bootstrap/css/dl_component.css" rel="stylesheet">
+    <!-- <link href="{{ ASSET_PATH }}/resources/bootstrap/css/dl_default.css" rel="stylesheet"> -->
     <link href="{{ ASSET_PATH }}/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ ASSET_PATH }}/resources/bootstrap/css/syntax_solarized.css" rel="stylesheet">
     <link href="{{ ASSET_PATH }}/resources/bootstrap/css/my_css.css" rel="stylesheet">
-
+    
     <!--[if lt IE 9]>
       <script src="{{ ASSET_PATH }}/resources/respond/Respond.min.js"></script>
     <![endif]-->
@@ -34,11 +36,12 @@
  </row>
 </div>
 {% else %}
+<div class="wrapper">
 <div class="container-fluid jumbotron" id="title">
    <h1>{{ page.title }} {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
 </div>
 
-<div class="wrapper">
+
 
 
 {% endif %}
@@ -56,16 +59,30 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
+
             <a class="navbar-brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
           </div>
+        
 
           <div class="collapse navbar-collapse navbar-ex1-collapse">
+          
             <ul class="nav navbar-nav">
+            <!-- <li class="dropdown"> -->
+            <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">Notebook<b class="caret"></b></a> -->
+
+            <!-- <ul class="dropdown-menu"> -->
+              <!-- <li><a href="{{ BASE_PATH }}/resources.html">All Pages</a></li> -->
+
+            <!-- </ul>      </li> -->
+
               {% assign pages_list = site.pages %}
               {% assign group = 'navigation' %}
               {% include JB/pages_list %}
-            </ul>
+              <li>{% include JB/notebook_menu %} </li>
+                           </ul> 
+
           </div>
+
         </div>
       </div>
     </div>
@@ -73,7 +90,7 @@
 
 
     <div class="container-fluid">
-      {{ content }}
+          {{ content }}
 
     </div>
 
@@ -106,7 +123,17 @@
 
     <script src="{{ ASSET_PATH }}/resources/bootstrap/js/bootstrap.min.js"></script>
     <script src="{{ ASSET_PATH }}/resources/bootstrap/js/jquery-ui-1.10.4.custom.min.js"></script>
-   
+   <!-- dl-menu script -->
+   <script src="{{ ASSET_PATH }}/resources/bootstrap/js/modernizr.custom.js"></script> 
+   <script src="{{ ASSET_PATH }}/resources/bootstrap/js/jquery.dlmenu.js"></script> 
+   <script>
+      $(function() {
+        $( '#dl-menu' ).dlmenu({
+          animationClasses : { classin : 'dl-animate-in-2', classout : 'dl-animate-out-2' }
+        });
+      });
+    </script>
+   <!-- : end dl Menu script  -->
     <script>
 //<![CDATA[
 
@@ -119,6 +146,10 @@ $(function() {
     $('nav.navbar').affix({
         offset: { top: $('nav.navbar').offset().top }
     })
+
+
+
+
 });
 //]]>
 </script>
@@ -126,6 +157,7 @@ $(function() {
 <script type="text/javascript"
   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
+
 {% if page.mytoc %}
  <script src="{{ ASSET_PATH }}/resources/bootstrap/js/jquery.tocify.js"></script>
 <script type="text/javascript">

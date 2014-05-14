@@ -20,16 +20,7 @@ html,body {
     min-height: 100%;
     height: 100%;
 }
-nav{
-.affix-top {
-    z-index:100000;
-}
-.affix {
-    top: 0;
-    width: 100%;
-    z-index:100000;
-}
-}
+
 container-fluid {
     padding-left: 15px;
     padding-right: 15px;
@@ -55,19 +46,6 @@ container-fluid {
 * {
     margin: 0;
 }
-.wrapper {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0px auto -90px;
-}
-.footer, .push {
-    height: 100px;
-}
-footer {
-    bottom:0px;
-}
-
 
 @media screen and (min-width:1px) {
     .jumbotron.hero {
@@ -99,8 +77,34 @@ footer {
     
 #nav_bar_opts(){
     .background_1{;background-color:#F8F8F8}
-    .background_768{background-color:#e7e7e7;color:auto;}
+    .background_768{background-color:#F8F8F8;color:auto;}
     .navbar_base{z-index:100000;z-index:100000}
     .navbar {margin-bottom:0px;}
    .navbar_1_a_color{ background-color:#333;color:#f3f3f3;}
 }
+nav{
+    .container{margin-left:16px;}
+
+&.affix-top {
+    z-index:100000;
+}
+&.affix {
+    top: 0;
+    width: 100%;
+    z-index:100000;
+}
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin-bottom:-100px;
+}
+.footer, .push {
+    height: 100px;
+}
+footer {
+    bottom:0px;
+}
+
