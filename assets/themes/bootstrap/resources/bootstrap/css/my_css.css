@@ -84,13 +84,13 @@ container-fluid {
     color: auto;
   }
 }
-nav .container {
+#affixer .container {
   margin-left: 16px;
 }
-nav.affix-top {
+#affixer.affix-top {
   z-index: 100000;
 }
-nav.affix {
+#affixer.affix {
   top: 0;
   width: 100%;
   z-index: 100000;
@@ -107,4 +107,27 @@ nav.affix {
 }
 footer {
   bottom: 0px;
+}
+.my-dropdown li a {
+  background-color: #f8f8f8;
+  background-size: auto;
+  box-sizing: border-box;
+  color: #777777;
+  display: block;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  z-index: 100000;
+  text-decoration: none;
+}
+.my-dropdown li a:active {
+  color: #333;
+  background-color: #e7e7e7;
+}
+.my-dropdown li a:hover {
+  background-color: #333;
+  color: #f3f3f3;
+}
+.my-dropdown li a.active {
+  color: #333;
+  background-color: #e7e7e7;
 }

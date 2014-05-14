@@ -18,7 +18,6 @@ Usage:
   	i.e. site.tags.cool_tag (this returns an array of posts tagged: cool_tag)
   	
   This helper can be seen in use at: ../_layouts/default.html
-
 <div id="dl-menu" class="dl-menuwrapper">
             <button class="dl-trigger">Open Menu</button>
             <ul class="dl-menu">
@@ -29,42 +28,52 @@ Usage:
                     <a href="#">Men</a>
                     <ul class="dl-submenu">
                       <li><a href="#">Shirts</a></li>
-
--->{% endcomment %}
-
-
-
 {% include jb/setup %}
-
-<div id="dl-menu" class="dl-menuwrapper">
-            <button type="button" class="btn btn-default dl-trigger">
-               <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span> 
-            </button>
+<div  class=" navbar-nav pull-left">
+<div class="nav">
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data="dropdown">
+      <button type="button" class="btn btn-default ">
+          Archive <b class="caret"></b>
+          </button></a>
             <!-- <button class="dl-trigger">Open Menu</button> -->
-            <ul class="dl-menu">
-
-
+            <ul class="dropdown-menu">
 {% for cat in site.category-list %}
               <li><a href="#">{{ cat }} </a>
-              <ul class="dl-submenu">
+              
   {% for node in site.pages  %}
     {% if node.subject contains 'data' %}
         {% if node.categories contains cat %}
         {% if page.url == node.url %}
               <li class="active"><a href="{{ BASE_PATH }}{{node.url}}" class="active">{{node.title}}</a></li>
-        	{% else %}
+          {% else %}
               <li><a href="{{ BASE_PATH }}{{node.url}}">{{node.title}}</a></li>
         {% endif %}
         {% endif %}
     {% endif %}
              
   {% endfor %}
-</ul>
 {% endfor %}
-</ul></div>
+</ul></li>
+</div>
+</div>
+-->{% endcomment %}
+ <div class="yamm navbar">
+  ...
 
-
-
+  {% for cat in site.category-list %}
+              <li><a href="#">{{ cat }} </a>
+              
+  {% for node in site.pages  %}
+    {% if node.subject contains 'data' %}
+        {% if node.categories contains cat %}
+        {% if page.url == node.url %}
+              <li class="active"><a href="{{ BASE_PATH }}{{node.url}}" class="active">{{node.title}}</a></li>
+          {% else %}
+              <li><a href="{{ BASE_PATH }}{{node.url}}">{{node.title}}</a></li>
+        {% endif %}
+        {% endif %}
+    {% endif %}
+             
+  {% endfor %}
+{% endfor %}
