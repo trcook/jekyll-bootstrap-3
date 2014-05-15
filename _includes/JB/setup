@@ -14,13 +14,14 @@ assign HOME_PATH = site.JB.BASE_PATH
       {% assign BASE_PATH = site.JB.BASE_PATH %}
       {% assign HOME_PATH = site.JB.BASE_PATH %}
     {% else %}
-    {% comment %}
+    
       {% assign BASE_PATH = site.JB.BASE_PATH %}
       {% assign HOME_PATH = site.JB.BASE_PATH %}
-    {% endcomment %}
-
+    {% comment %}
+    SWITCH THIS IN _config.yml
       {% assign BASE_PATH = '' %}
       {% assign HOME_PATH = '' %}
+{% endcomment %}
 
     {% endif %}
 
