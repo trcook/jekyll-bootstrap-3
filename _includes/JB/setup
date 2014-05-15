@@ -14,8 +14,14 @@ assign HOME_PATH = site.JB.BASE_PATH
       {% assign BASE_PATH = site.JB.BASE_PATH %}
       {% assign HOME_PATH = site.JB.BASE_PATH %}
     {% else %}
+    {% comment %}
       {% assign BASE_PATH = site.JB.BASE_PATH %}
       {% assign HOME_PATH = site.JB.BASE_PATH %}
+    {% endcomment %}
+
+      {% assign BASE_PATH = '' %}
+      {% assign HOME_PATH = '' %}
+
     {% endif %}
 
     {% if site.JB.ASSET_PATH %}

@@ -89,11 +89,13 @@ container-fluid {
 }
 #affixer.affix-top {
   z-index: 100000;
+  height: 0px;
 }
 #affixer.affix {
   top: 0;
   width: 100%;
   z-index: 100000;
+  height: auto;
 }
 .wrapper {
   min-height: 100%;
@@ -108,7 +110,27 @@ container-fluid {
 footer {
   bottom: 0px;
 }
-.my-dropdown li a {
+.my-dropdown-row {
+  z-index: 100000;
+  background-color: #f8f8f8;
+}
+.my-dropdown-row .my-dropdown {
+  z-index: 100000;
+  background-color: #f8f8f8;
+}
+.my-dropdown-row .my-dropdown .dropdown-link a {
+  padding-left: 15px;
+  margin-right: -10px;
+}
+.my-dropdown-row .my-dropdown .dropdown-link a:hover {
+  background-color: #333;
+  color: #f3f3f3;
+}
+.my-dropdown-row .my-dropdown li {
+  background-color: #f8f8f8;
+}
+.my-dropdown-row .my-dropdown li a {
+  z-index: 100000;
   background-color: #f8f8f8;
   background-size: auto;
   box-sizing: border-box;
@@ -116,18 +138,20 @@ footer {
   display: block;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
-  z-index: 100000;
   text-decoration: none;
 }
-.my-dropdown li a:active {
+.my-dropdown-row .my-dropdown li a:active {
   color: #333;
   background-color: #e7e7e7;
 }
-.my-dropdown li a:hover {
+.my-dropdown-row .my-dropdown li a:hover {
   background-color: #333;
   color: #f3f3f3;
 }
-.my-dropdown li a.active {
+.my-dropdown-row .my-dropdown li a.active {
   color: #333;
   background-color: #e7e7e7;
+}
+div.navbar.yamm.navbar-default {
+  z-index: 10000;
 }
