@@ -14,3 +14,4 @@ Thumbs.db
 *.sublime-workspace
 *.sublime-project
 _base_config.yml
+_config.yml
