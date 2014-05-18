@@ -26,15 +26,9 @@ container-fluid {
   padding-left: 15px;
   padding-right: 15px;
 }
-#toc.nav li {
-  margin-left: 100px;
-}
 .nav-list li,
 .nav-list .nav-header {
   padding-right: 10px;
-}
-.tocify.nav ul {
-  margin-left: 10px;
 }
 .invert {
   background-color: #2b2b2b;
@@ -48,7 +42,7 @@ container-fluid {
   .jumbotron.hero {
     padding-top: 20px;
     padding-bottom: 20px;
-    background-image: linear-gradient(to bottom, #529abb 0, #4186a6 100%);
+    background-color: #529abb;
     min-height: 30%;
     height: auto;
   }
@@ -73,8 +67,11 @@ container-fluid {
   
     min-height: 100%;
     height: 100%;
-    background-image: linear-gradient(to-top, #74aec8 0, #529abb 100%);
+    background-color: #529abb;
   }
+  /*      #gradient.vertical(#529abb,#74aec8,0%,10%);}
+    linear-gradient(to-top, #74aec8 0, #529abb 100%);
+   }*/
   .navbar {
     margin-bottom: 0px;
   }
@@ -151,6 +148,51 @@ footer {
 .my-dropdown-row .my-dropdown li a.active {
   color: #333;
   background-color: #e7e7e7;
+}
+#toc {
+  z-index: 100000;
+  background-color: #f8f8f8;
+}
+#toc li.active a {
+  color: #333;
+  background-color: #e7e7e7;
+}
+#toc .dropdown-link a {
+  padding-left: 15px;
+  margin-right: -10px;
+}
+#toc .dropdown-link a:hover {
+  background-color: #333;
+  color: #f3f3f3;
+}
+#toc li {
+  background-color: #f8f8f8;
+}
+#toc li a {
+  z-index: 100000;
+  background-color: #f8f8f8;
+  background-size: auto;
+  box-sizing: border-box;
+  color: #777777;
+  display: block;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+}
+#toc li a:active {
+  color: #333;
+  background-color: #e7e7e7;
+}
+#toc li a:hover {
+  background-color: #333;
+  color: #f3f3f3;
+}
+#toc li a.active {
+  color: #333;
+  background-color: #e7e7e7;
+}
+#toc li + ul {
+  margin-left: 10px;
 }
 div.navbar.yamm.navbar-default {
   z-index: 10000;

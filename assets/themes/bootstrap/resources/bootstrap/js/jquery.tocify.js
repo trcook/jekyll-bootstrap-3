@@ -381,7 +381,7 @@
             item = $("<li/>", {
 
                 // Sets a common class name to the list item
-                "class": itemClassName,
+                "class": itemClassName+" dropdown-link",
 
                 "data-unique": hashValue
 
