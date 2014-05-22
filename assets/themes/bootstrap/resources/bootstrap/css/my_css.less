@@ -1,57 +1,4 @@
 // brought from the mixins.less part of the bootstrap library:
-#gradient {
-
-  // Horizontal gradient, from left to right
-  //
-  // Creates two color stops, start and end, by specifying a color and position for each color stop.
-  // Color stops are not available in IE9 and below.
-  .horizontal(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
-    background-image: -webkit-linear-gradient(left, color-stop(@start-color @start-percent), color-stop(@end-color @end-percent)); // Safari 5.1-6, Chrome 10+
-    background-image:  linear-gradient(to right, @start-color @start-percent, @end-color @end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
-    background-repeat: repeat-x;
-    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color))); // IE9 and down
-  }
-
-  // Vertical gradient, from top to bottom
-  //
-  // Creates two color stops, start and end, by specifying a color and position for each color stop.
-  // Color stops are not available in IE9 and below.
-.vertical(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
-    background-image: -webkit-linear-gradient(top, @start-color @start-percent, @end-color @end-percent);  // Safari 5.1-6, Chrome 10+
-    background-image: linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
-    background-repeat: repeat-x;
-    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color))); // IE9 and down
-}
-
-.directional(@start-color: #555; @end-color: #333; @deg: 45deg) {
-    background-repeat: repeat-x;
-    background-image: -webkit-linear-gradient(@deg, @start-color, @end-color); // Safari 5.1-6, Chrome 10+
-    background-image: linear-gradient(@deg, @start-color, @end-color); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
-}
-.horizontal-three-colors(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f) {
-    background-image: -webkit-linear-gradient(left, @start-color, @mid-color @color-stop, @end-color);
-    background-image: linear-gradient(to right, @start-color, @mid-color @color-stop, @end-color);
-    background-repeat: no-repeat;
-    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
-}
-.vertical-three-colors(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f) {
-    background-image: -webkit-linear-gradient(@start-color, @mid-color @color-stop, @end-color);
-    background-image: linear-gradient(@start-color, @mid-color @color-stop, @end-color);
-    background-repeat: no-repeat;
-    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
-}
-  .radial(@inner-color: #555; @outer-color: #333) {
-    background-image: -webkit-radial-gradient(circle, @inner-color, @outer-color);
-    background-image: radial-gradient(circle, @inner-color, @outer-color);
-    background-repeat: no-repeat;
-  }
-  .striped(@color: rgba(255,255,255,.15); @angle: 45deg) {
-    background-image: -webkit-linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
-    background-image: linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
-  }
-}
-  // 
-
 
 .navbar-default .navbar-nav &>li &>a:hover,.navbar-default .navbar-nav &>li &>a:focus {
     color: #333;
@@ -64,7 +11,7 @@
 .jumbotron.hero {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    box-sizing: border-box; 
     position:relative;
     h1 {
         position:absolute;
@@ -107,7 +54,6 @@ container-fluid {
         padding-top: 20px;
         padding-bottom: 20px;
         background-color:#529abb;
-        // background-image: linear-gradient(to top, #529abb 0, #63A4C2 100%);
         min-height:30%;
         height:auto;
     }
@@ -122,14 +68,9 @@ container-fluid {
 
 @media screen and (min-width:768px) {
     .jumbotron.hero {
-    /*padding-top: 200px;
-    padding-bottom: 20px;*/
     min-height:100%;
     height:100%;
     background-color:#529abb;}
-/*      #gradient.vertical(#529abb,#74aec8,0%,10%);}
-  linear-gradient(to-top, #74aec8 0, #529abb 100%);
- }*/
 .navbar{#nav_bar_opts.navbar;}
 .navbar-default .navbar-nav>li>a{#nav_bar_opts.navbar_base;#nav_bar_opts.background_768; }
 }
@@ -166,12 +107,15 @@ container-fluid {
     height: auto !important;
     height: 100%;
     margin-bottom:-100px;
+    
 }
-.footer, .push {
-    height: 100px;
-}
-footer {
+
+.push{
+  height:100px;
+    }
+.footer{
     bottom:0px;
+    &:extend(.push);
 }
 
 
@@ -217,7 +161,22 @@ li+ul{margin-left:10px;
 
 div.navbar.yamm.navbar-default{z-index:10000;}
 
+.center-block{
+    & table, &+img{margin:0 auto; float:none;}
+&+img, &+.highlight+p img{margin:0 auto; float:none;display:block;}
+}
+
+div.panel-body {
+    & *>img{.makecenter()}
+}
 
 // colors
 @navblack: #333;
 @navbackground: #f8f8f8;
+
+//mixins
+.makecenter(@margin:0 auto;@float:none;@display:block){
+    margin:@margin;
+    float:@float;
+    display:@display;
+};

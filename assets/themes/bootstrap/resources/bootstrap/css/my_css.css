@@ -62,16 +62,10 @@ container-fluid {
 }
 @media screen and (min-width: 768px) {
   .jumbotron.hero {
-    /*padding-top: 200px;
-      padding-bottom: 20px;*/
-  
     min-height: 100%;
     height: 100%;
     background-color: #529abb;
   }
-  /*      #gradient.vertical(#529abb,#74aec8,0%,10%);}
-    linear-gradient(to-top, #74aec8 0, #529abb 100%);
-   }*/
   .navbar {
     margin-bottom: 0px;
   }
@@ -100,11 +94,11 @@ container-fluid {
   height: 100%;
   margin-bottom: -100px;
 }
-.footer,
-.push {
+.push,
+.footer {
   height: 100px;
 }
-footer {
+.footer {
   bottom: 0px;
 }
 .my-dropdown-row {
@@ -196,4 +190,20 @@ footer {
 }
 div.navbar.yamm.navbar-default {
   z-index: 10000;
+}
+.center-block table,
+.center-block + img {
+  margin: 0 auto;
+  float: none;
+}
+.center-block + img,
+.center-block + .highlight + p img {
+  margin: 0 auto;
+  float: none;
+  display: block;
+}
+div.panel-body * > img {
+  margin: 0 auto;
+  float: none;
+  display: block;
 }
