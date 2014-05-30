@@ -45,6 +45,20 @@ task :deploy do |t,args|
 		}
 	elsif tagmatch == 'local' then 
 		print "serving locally at #{config["JB"]["BASE_PATH"]}"
-		Rake::Task["preview"].invoke()
+		Rake::Task["local_preview"].invoke()
 	end
+end
+
+
+# Basic setup here copied from octopress rakefile, but it seems to be the standard way of doing this. 
+task :local_preview do
+
+jekyllPid = Process.spawn( "jekyll serve -w")
+trap("INT") {
+     [jekyllPid].each { |pid| Process.kill(9, pid) rescue Errno::ESRCH }
+     exit 0
+   }
+
+[jekyllPid].each { |pid| Process.wait(pid) }
+
 end
