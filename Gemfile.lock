@@ -11,9 +11,12 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     colorator (0.1)
+    colored (1.2)
     execjs (2.2.2)
     fast-stemmer (1.0.2)
     ffi (1.9.6)
+    gemrat (0.4.6)
+      colored (= 1.2)
     hitimes (1.2.2)
     jekyll (2.5.1)
       classifier-reborn (~> 2.0)
@@ -51,6 +54,7 @@ GEM
     pygments.rb (0.6.0)
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.1.0)
+    rake (10.3.2)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
@@ -68,6 +72,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  gemrat
   jekyll (= 2.5.1)
   liquid (= 2.6.1)
+  rake (= 10.3.2)
   stringex (= 2.5.2)
